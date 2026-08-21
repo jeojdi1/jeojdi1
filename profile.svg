@@ -35,7 +35,7 @@
 <text y="787" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">mcgestures/</tspan><tspan x="252" fill="#3fae5c">play Minecraft with hand gestures</tspan></text>
 <text y="810" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">autispark/</tspan><tspan x="252" fill="#3fae5c">AI literacy platform for autism</tspan></text>
 <text y="833" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">ureminders/</tspan><tspan x="252" fill="#3fae5c">location-aware adaptive to-do list</tspan></text>
-<text x="42" y="866" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh contrib --graph   # 456 contributions in the last year</tspan></text>
+<text x="42" y="866" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh contrib --graph   # 457 contributions in the last year</tspan></text>
 <rect x="42" y="904" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="42" y="918" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="42" y="932" width="10" height="10" rx="2" fill="#1d4d28"/>
@@ -80,8 +80,8 @@
 <rect x="112" y="988" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="126" y="904" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="126" y="918" width="10" height="10" rx="2" fill="#15221a"/>
-<rect x="126" y="932" width="10" height="10" rx="2" fill="#1d4d28"/>
-<rect x="126" y="946" width="10" height="10" rx="2" fill="#15221a"/>
+<rect x="126" y="932" width="10" height="10" rx="2" fill="#15221a"/>
+<rect x="126" y="946" width="10" height="10" rx="2" fill="#1d4d28"/>
 <rect x="126" y="960" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="126" y="974" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="126" y="988" width="10" height="10" rx="2" fill="#15221a"/>
@@ -152,8 +152,8 @@
 <rect x="266" y="918" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="266" y="932" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="266" y="946" width="10" height="10" rx="2" fill="#15221a"/>
-<rect x="266" y="960" width="10" height="10" rx="2" fill="#1d4d28"/>
-<rect x="266" y="974" width="10" height="10" rx="2" fill="#15221a"/>
+<rect x="266" y="960" width="10" height="10" rx="2" fill="#15221a"/>
+<rect x="266" y="974" width="10" height="10" rx="2" fill="#1d4d28"/>
 <rect x="266" y="988" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="280" y="904" width="10" height="10" rx="2" fill="#15221a"/>
 <rect x="280" y="918" width="10" height="10" rx="2" fill="#15221a"/>
@@ -426,11 +426,11 @@
 <rect x="558" y="1048" width="14" height="2" rx="1.5" fill="#15221a"/>
 <text x="578" y="1054" font-size="13" fill="#3fae5c">0</text>
 <text x="618" y="1054" font-size="13" fill="#4a6b4f">fri</text>
-<rect x="654" y="1045" width="14" height="5" rx="1.5" fill="#56e07a"/>
-<text x="674" y="1054" font-size="13" fill="#3fae5c">7</text>
-<text x="42" y="1080" font-size="15"><tspan fill="#7dffa0" font-weight="bold">33 contributions in the last 7 days</tspan><tspan fill="#56e07a" font-weight="normal"> · streak: 1d</tspan></text>
+<rect x="654" y="1044" width="14" height="6" rx="1.5" fill="#56e07a"/>
+<text x="674" y="1054" font-size="13" fill="#3fae5c">8</text>
+<text x="42" y="1080" font-size="15"><tspan fill="#7dffa0" font-weight="bold">34 contributions in the last 7 days</tspan><tspan fill="#56e07a" font-weight="normal"> · streak: 1d</tspan></text>
 <text x="42" y="1116" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh highlights --past-month</tspan></text>
-<text x="42" y="1148" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#7dffa0" font-weight="bold">132 contributions</tspan><tspan fill="#56e07a" font-weight="normal"> across 17 active days</tspan></text>
+<text x="42" y="1148" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#7dffa0" font-weight="bold">133 contributions</tspan><tspan fill="#56e07a" font-weight="normal"> across 17 active days</tspan></text>
 <text x="42" y="1174" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">most active: </tspan><tspan fill="#7dffa0" font-weight="bold">Brevitas-Systems · brevitas · homebrew-brevitas</tspan></text>
 <text x="42" y="1200" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">23 PRs opened</tspan></text>
 <text x="42" y="1236" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh langs</tspan></text>
