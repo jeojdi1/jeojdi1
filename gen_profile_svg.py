@@ -173,34 +173,27 @@ emit(PAD, tspan("building ", MID) + tspan("brevitassystems.com", GREEN_HI, "bold
 # roles
 prompt("gh roles --all")
 gap(6)
-emit(PAD, tspan("★ ", MID) + tspan("co-founder @ Brevitas Systems", GREEN_HI, "bold") + tspan(" — AI agent orchestration,", GREEN))
-emit(PAD + 18, tspan("cutting multi-agent token costs · Founders Inc. Off Season, SF", GREEN))
-emit(PAD, tspan("★ ", MID) + tspan("founding engineer @ Vivirion Solutions", GREEN_HI, "bold") + tspan(" — full-stack:", GREEN))
-emit(PAD + 18, tspan("Vi-Learn · Vi-Connect · Vi-Nav (Dec 2025 – now)", GREEN))
+emit(PAD, tspan("★ ", MID) + tspan("co-founder @ Brevitas Systems", GREEN_HI, "bold") + tspan(" — AI agent orchestration (SF)", GREEN))
+emit(PAD, tspan("★ ", MID) + tspan("founding engineer @ Vivirion", GREEN_HI, "bold") + tspan(" — Vi-Learn · Vi-Connect · Vi-Nav", GREEN))
 emit(PAD, tspan("★ ", MID) + tspan("co-founder @ Caestus Labs", GREEN_HI, "bold") + tspan(" — VR haptic wearables (2026)", GREEN))
-emit(PAD, tspan("★ ", MID) + tspan("incoming @ Laurier × Waterloo", GREEN_HI, "bold") + tspan(" — BBA + BMath double degree ('26)", GREEN))
+emit(PAD, tspan("★ ", MID) + tspan("incoming @ Laurier × Waterloo", GREEN_HI, "bold") + tspan(" — BBA + BMath (\'26)", GREEN))
 
 # achievements
 prompt("gh achievements --proud-of")
 gap(6)
-emit(PAD, tspan("★ ", MID) + tspan("4× hackathon winner", GREEN_HI, "bold") + tspan(" — slicefund · ferdinand · simteach ·", GREEN))
-emit(PAD + 18, tspan("biobuddyai", GREEN))
-emit(PAD, tspan("★ ", MID) + tspan("contributor @ LMCache", GREEN_HI, "bold") + tspan(" — open-source LLM serving (recent)", GREEN))
-emit(PAD, tspan("★ ", MID) + tspan("12 hackathons · 11 projects shipped", GREEN_HI, "bold"))
+emit(PAD, tspan("★ ", MID) + tspan("4× hackathon winner", GREEN_HI, "bold") + tspan(" — slicefund · ferdinand · simteach · biobuddyai", GREEN))
+emit(PAD, tspan("★ ", MID) + tspan("contributor @ LMCache", GREEN_HI, "bold") + tspan(" · ", GREEN) + tspan("12 hackathons · 11 projects shipped", GREEN_HI, "bold"))
 
 # repos
-prompt("gh repos --sort recent | head -9")
+prompt("gh repos --sort recent | head -6")
 gap(6)
 REPOS = [
-    ("slicefund/",   ["agentic arbitrage across prediction", "markets [WIN]"]),
+    ("slicefund/",   ["agentic arbitrage on prediction markets [WIN]"]),
     ("ferdinand/",   ["voice → multi-step computer actions [WIN]"]),
     ("simteach/",    ["AI classroom scenarios for teachers [WIN]"]),
     ("biobuddyai/",  ["quantum + AI wildlife threat detection [WIN]"]),
     ("opendrone/",   ["indoor autonomous drone navigation"]),
-    ("gpt-wrapper/", ["browser beat maker from everyday sounds"]),
     ("mcgestures/",  ["play Minecraft with hand gestures"]),
-    ("autispark/",   ["AI literacy platform for autism"]),
-    ("ureminders/",  ["location-aware adaptive to-do list"]),
 ]
 COL2 = PAD + 210
 for name, desc_lines in REPOS:
@@ -277,34 +270,6 @@ for i in range(0, len(LANGS), 2):
         body.append(f'<rect x="{bx}" y="{by}" width="{bar_w*pct/100:.0f}" height="{bar_h}" rx="2" fill="{GREEN}"/>')
         body.append(f'<text x="{bx + bar_w + 12}" y="{cy}" font-size="{FS}" fill="{GREEN}">{pct}%</text>')
     cy += LINE
-
-# info / stack
-prompt("gh info --stack")
-gap(6)
-STACK = [
-    ("langs",     "python · typescript · c++"),
-    ("ml/agents", "pytorch · vllm · lmcache · opencv · whisper"),
-    ("web",       "react · next.js · fastapi · supabase"),
-    ("weird",     "qiskit · drones · VR haptics · smart contact lenses"),
-]
-for label, vals in STACK:
-    body.append(
-        f'<text y="{cy}" font-size="{FS}">'
-        f'<tspan x="{PAD}" fill="{GREEN_HI}" font-weight="bold">{esc(label)}</tspan>'
-        f'<tspan x="{PAD+150}" fill="{GREEN}">{esc(vals)}</tspan></text>'
-    )
-    cy += LINE - 3
-
-# status
-prompt("gh status")
-gap(6)
-emit(PAD, tspan("● ", MID) + tspan("building @ Founders Inc. Off Season — Fort Mason, SF", GREEN))
-emit(PAD, tspan("● ", MID) + tspan("open to: ", GREEN) + tspan("design partners · hackathon teams · coffee chats", GREEN_HI, "bold"))
-
-# ping
-prompt("ping brevitassystems.com")
-gap(6)
-emit(PAD, tspan("64 bytes from brevitassystems.com: time=0.9 ms — ", GREEN) + tspan("always shipping", GREEN_HI, "bold"))
 
 # footer
 gap(14)
