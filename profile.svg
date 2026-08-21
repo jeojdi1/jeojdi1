@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="830" height="1257" viewBox="0 0 830 1257" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace">
-  <rect width="830" height="1257" fill="#080c08"/>
-  <rect x="8" y="8" width="814" height="1241" rx="14" fill="#0b120c" stroke="#1d2b1e" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="1553" viewBox="0 0 830 1553" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace">
+  <rect width="830" height="1553" fill="#080c08"/>
+  <rect x="8" y="8" width="814" height="1537" rx="14" fill="#0b120c" stroke="#1d2b1e" stroke-width="1.5"/>
   <path d="M8 8 h814 a14 14 0 0 1 0 0" fill="none"/>
   <rect x="9" y="9" width="812" height="52" rx="13" fill="#101a11"/>
   <rect x="9" y="40" width="812" height="22" fill="#101a11"/>
@@ -283,8 +283,18 @@
 <rect x="484" y="1092" width="250" height="12" rx="2" fill="#14261a"/>
 <rect x="484" y="1092" width="32" height="12" rx="2" fill="#56e07a"/>
 <text x="746" y="1103" font-size="15" fill="#56e07a">13%</text>
-<text x="42" y="1143" font-size="15"><tspan fill="#7dffa0" font-weight="bold">github/jeojdi1  devpost/Jeojdi  in/yangjam  x/@jamyanges</tspan></text>
-<text x="42" y="1169" font-size="15"><tspan fill="#56e07a" font-weight="normal">yjames1103@gmail.com</tspan><tspan fill="#4a6b4f" font-weight="normal">   streak: 23d</tspan></text>
-<text x="42" y="1203" font-size="15" fill="#4a6b4f">$ </text>
-<rect x="62" y="1190" width="9" height="17" fill="#56e07a"><animate attributeName="opacity" values="1;1;0;0" dur="1.2s" repeatCount="indefinite"/></rect>
+<text x="42" y="1139" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh info --stack</tspan></text>
+<text y="1171" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">langs</tspan><tspan x="192" fill="#56e07a">python · typescript · c++</tspan></text>
+<text y="1194" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">ml/agents</tspan><tspan x="192" fill="#56e07a">pytorch · vllm · lmcache · opencv · whisper</tspan></text>
+<text y="1217" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">web</tspan><tspan x="192" fill="#56e07a">react · next.js · fastapi · supabase</tspan></text>
+<text y="1240" font-size="15"><tspan x="42" fill="#7dffa0" font-weight="bold">weird</tspan><tspan x="192" fill="#56e07a">qiskit · drones · VR haptics · smart contact lenses</tspan></text>
+<text x="42" y="1273" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh status</tspan></text>
+<text x="42" y="1305" font-size="15"><tspan fill="#3fae5c" font-weight="normal">● </tspan><tspan fill="#56e07a" font-weight="normal">building @ Founders Inc. Off Season — Fort Mason, SF</tspan></text>
+<text x="42" y="1331" font-size="15"><tspan fill="#3fae5c" font-weight="normal">● </tspan><tspan fill="#56e07a" font-weight="normal">open to: </tspan><tspan fill="#7dffa0" font-weight="bold">design partners · hackathon teams · coffee chats</tspan></text>
+<text x="42" y="1367" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">ping brevitassystems.com</tspan></text>
+<text x="42" y="1399" font-size="15"><tspan fill="#56e07a" font-weight="normal">64 bytes from brevitassystems.com: time=0.9 ms — </tspan><tspan fill="#7dffa0" font-weight="bold">always shipping</tspan></text>
+<text x="42" y="1439" font-size="15"><tspan fill="#7dffa0" font-weight="bold">github/jeojdi1  devpost/Jeojdi  in/yangjam  x/@jamyanges</tspan></text>
+<text x="42" y="1465" font-size="15"><tspan fill="#56e07a" font-weight="normal">yjames1103@gmail.com</tspan><tspan fill="#4a6b4f" font-weight="normal">   streak: 23d</tspan></text>
+<text x="42" y="1499" font-size="15" fill="#4a6b4f">$ </text>
+<rect x="62" y="1486" width="9" height="17" fill="#56e07a"><animate attributeName="opacity" values="1;1;0;0" dur="1.2s" repeatCount="indefinite"/></rect>
 </svg>

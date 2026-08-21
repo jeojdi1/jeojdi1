@@ -145,6 +145,34 @@ for i in range(0, len(LANGS), 2):
         body.append(f'<text x="{bx + bar_w + 12}" y="{cy}" font-size="{FS}" fill="{GREEN}">{pct}%</text>')
     cy += LINE
 
+# info / stack
+prompt("gh info --stack")
+gap(6)
+STACK = [
+    ("langs",     "python · typescript · c++"),
+    ("ml/agents", "pytorch · vllm · lmcache · opencv · whisper"),
+    ("web",       "react · next.js · fastapi · supabase"),
+    ("weird",     "qiskit · drones · VR haptics · smart contact lenses"),
+]
+for label, vals in STACK:
+    body.append(
+        f'<text y="{cy}" font-size="{FS}">'
+        f'<tspan x="{PAD}" fill="{GREEN_HI}" font-weight="bold">{esc(label)}</tspan>'
+        f'<tspan x="{PAD+150}" fill="{GREEN}">{esc(vals)}</tspan></text>'
+    )
+    cy += LINE - 3
+
+# status
+prompt("gh status")
+gap(6)
+emit(PAD, tspan("● ", MID) + tspan("building @ Founders Inc. Off Season — Fort Mason, SF", GREEN))
+emit(PAD, tspan("● ", MID) + tspan("open to: ", GREEN) + tspan("design partners · hackathon teams · coffee chats", GREEN_HI, "bold"))
+
+# ping
+prompt("ping brevitassystems.com")
+gap(6)
+emit(PAD, tspan("64 bytes from brevitassystems.com: time=0.9 ms — ", GREEN) + tspan("always shipping", GREEN_HI, "bold"))
+
 # footer
 gap(14)
 emit(PAD, tspan("github/jeojdi1  devpost/Jeojdi  in/yangjam  x/@jamyanges", GREEN_HI, "bold"))
