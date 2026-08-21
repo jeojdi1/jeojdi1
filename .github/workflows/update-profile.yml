@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -27,5 +31,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- profile.svg; then
+            echo "profile.svg unchanged; skipping commit"
+            exit 0
+          fi
           git add profile.svg data.json
-          git diff --cached --quiet || { git commit -m "chore: refresh profile data"; git push; }
+          git commit -m "chore: refresh profile data"
+          git pull --rebase origin main
+          git push
