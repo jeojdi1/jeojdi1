@@ -177,7 +177,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 
 out = "profile.svg"
 import os
-os.makedirs(os.path.dirname(out), exist_ok=True)
+if os.path.dirname(out): os.makedirs(os.path.dirname(out), exist_ok=True)
 with open(out, "w") as f:
     f.write(svg)
 print(f"wrote {out}  ({W}x{H})")
