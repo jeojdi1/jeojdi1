@@ -419,7 +419,7 @@
 <text x="42" y="920" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh highlights --past-month</tspan></text>
 <text x="42" y="952" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#7dffa0" font-weight="bold">123 contributions</tspan><tspan fill="#56e07a" font-weight="normal"> across 15 active days</tspan></text>
 <text x="42" y="978" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">most active: </tspan><tspan fill="#7dffa0" font-weight="bold">Brevitas-Systems · brevitas · jeojdi1</tspan></text>
-<text x="42" y="1004" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">23 PRs opened</tspan></text>
+<text x="42" y="1004" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">22 PRs opened</tspan></text>
 <text x="42" y="1040" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh langs</tspan></text>
 <text x="42" y="1074" font-size="15" fill="#7dffa0" font-weight="bold">html</text>
 <rect x="104" y="1063" width="250" height="12" rx="2" fill="#14261a"/>
