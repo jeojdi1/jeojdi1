@@ -398,29 +398,30 @@
 <rect x="770" y="750" width="10" height="10" rx="2" fill="#56e07a"/>
 <rect x="770" y="764" width="10" height="10" rx="2" fill="#2e7a3d"/>
 <rect x="770" y="778" width="10" height="10" rx="2" fill="#15221a"/>
+<rect x="770" y="792" width="10" height="10" rx="2" fill="#15221a"/>
 <text x="42" y="826" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh contrib --past-week</tspan></text>
-<text x="42" y="858" font-size="13" fill="#4a6b4f">sat</text>
+<text x="42" y="858" font-size="13" fill="#4a6b4f">sun</text>
 <rect x="78" y="852" width="14" height="2" rx="1.5" fill="#15221a"/>
 <text x="98" y="858" font-size="13" fill="#3fae5c">0</text>
-<text x="138" y="858" font-size="13" fill="#4a6b4f">sun</text>
+<text x="138" y="858" font-size="13" fill="#4a6b4f">mon</text>
 <rect x="174" y="852" width="14" height="2" rx="1.5" fill="#15221a"/>
 <text x="194" y="858" font-size="13" fill="#3fae5c">0</text>
-<text x="234" y="858" font-size="13" fill="#4a6b4f">mon</text>
-<rect x="270" y="852" width="14" height="2" rx="1.5" fill="#15221a"/>
-<text x="290" y="858" font-size="13" fill="#3fae5c">0</text>
-<text x="330" y="858" font-size="13" fill="#4a6b4f">tue</text>
-<rect x="366" y="851" width="14" height="3" rx="1.5" fill="#56e07a"/>
-<text x="386" y="858" font-size="13" fill="#3fae5c">3</text>
-<text x="426" y="858" font-size="13" fill="#4a6b4f">wed</text>
-<rect x="462" y="838" width="14" height="16" rx="1.5" fill="#56e07a"/>
-<text x="482" y="858" font-size="13" fill="#3fae5c">35</text>
-<text x="522" y="858" font-size="13" fill="#4a6b4f">thu</text>
-<rect x="558" y="849" width="14" height="5" rx="1.5" fill="#56e07a"/>
-<text x="578" y="858" font-size="13" fill="#3fae5c">10</text>
-<text x="618" y="858" font-size="13" fill="#4a6b4f">fri</text>
+<text x="234" y="858" font-size="13" fill="#4a6b4f">tue</text>
+<rect x="270" y="851" width="14" height="3" rx="1.5" fill="#56e07a"/>
+<text x="290" y="858" font-size="13" fill="#3fae5c">3</text>
+<text x="330" y="858" font-size="13" fill="#4a6b4f">wed</text>
+<rect x="366" y="838" width="14" height="16" rx="1.5" fill="#56e07a"/>
+<text x="386" y="858" font-size="13" fill="#3fae5c">35</text>
+<text x="426" y="858" font-size="13" fill="#4a6b4f">thu</text>
+<rect x="462" y="849" width="14" height="5" rx="1.5" fill="#56e07a"/>
+<text x="482" y="858" font-size="13" fill="#3fae5c">10</text>
+<text x="522" y="858" font-size="13" fill="#4a6b4f">fri</text>
+<rect x="558" y="852" width="14" height="2" rx="1.5" fill="#15221a"/>
+<text x="578" y="858" font-size="13" fill="#3fae5c">0</text>
+<text x="618" y="858" font-size="13" fill="#4a6b4f">sat</text>
 <rect x="654" y="852" width="14" height="2" rx="1.5" fill="#15221a"/>
 <text x="674" y="858" font-size="13" fill="#3fae5c">0</text>
-<text x="42" y="884" font-size="15"><tspan fill="#7dffa0" font-weight="bold">48 contributions in the last 7 days</tspan><tspan fill="#56e07a" font-weight="normal"> · streak: 3d</tspan></text>
+<text x="42" y="884" font-size="15"><tspan fill="#7dffa0" font-weight="bold">48 contributions in the last 7 days</tspan><tspan fill="#56e07a" font-weight="normal"> · streak: 0d</tspan></text>
 <text x="42" y="920" font-size="15"><tspan fill="#4a6b4f" font-weight="normal">$ </tspan><tspan fill="#4a6b4f" font-weight="normal">gh highlights --past-month</tspan></text>
 <text x="42" y="952" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#7dffa0" font-weight="bold">109 contributions</tspan><tspan fill="#56e07a" font-weight="normal"> across 12 active days</tspan></text>
 <text x="42" y="978" font-size="15"><tspan fill="#3fae5c" font-weight="normal">★ </tspan><tspan fill="#56e07a" font-weight="normal">most active: </tspan><tspan fill="#7dffa0" font-weight="bold">MemOS · Brevitas-Systems · jeojdi1</tspan></text>
@@ -443,7 +444,7 @@
 <rect x="484" y="1089" width="15" height="12" rx="2" fill="#56e07a"/>
 <text x="746" y="1100" font-size="15" fill="#56e07a">6%</text>
 <text x="42" y="1140" font-size="15"><tspan fill="#7dffa0" font-weight="bold">github/jeojdi1  devpost/Jeojdi  in/yangjam  x/@jamyanges</tspan></text>
-<text x="42" y="1166" font-size="15"><tspan fill="#56e07a" font-weight="normal">yjames1103@gmail.com</tspan><tspan fill="#4a6b4f" font-weight="normal">   updated Sep 04 · auto-refreshes every 6h</tspan></text>
+<text x="42" y="1166" font-size="15"><tspan fill="#56e07a" font-weight="normal">yjames1103@gmail.com</tspan><tspan fill="#4a6b4f" font-weight="normal">   updated Sep 05 · auto-refreshes every 6h</tspan></text>
 <text x="42" y="1200" font-size="15" fill="#4a6b4f">$ </text>
 <rect x="62" y="1187" width="9" height="17" fill="#56e07a"><animate attributeName="opacity" values="1;1;0;0" dur="1.2s" repeatCount="indefinite"/></rect>
 </svg>
