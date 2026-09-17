@@ -5,10 +5,11 @@ Fetches real data (contribution calendar, recent events, languages) from the
 GitHub API using GITHUB_TOKEN / GH_TOKEN, caches it in data.json, and falls
 back to the cache when offline. Run in CI on a schedule to keep it live.
 """
-import html, json, os, sys, urllib.request
+import html, json, os, re, sys, urllib.request
 from datetime import date, datetime, timedelta, timezone
 
 LOGIN = "jeojdi1"
+OWN = {"jeojdi1", "jeojdi"}  # my own accounts; PRs there are not upstream work
 HERE = os.path.dirname(os.path.abspath(__file__)) or "."
 CACHE = os.path.join(HERE, "data.json")
 
@@ -41,20 +42,21 @@ def fetch_data():
         if len(batch) < 100:
             break
 
-    # languages across non-fork repos
-    repos = _req(f"https://api.github.com/users/{LOGIN}/repos?per_page=100")
-    langs = {}
-    for r in repos:
-        if r.get("fork"):
+    # PRs opened on other people's projects (state refreshes each run)
+    hits = _req(f"https://api.github.com/search/issues?q=author:{LOGIN}+type:pr&sort=created&per_page=100")
+    upstream, stars = [], {}
+    for it in hits["items"]:
+        repo = it["repository_url"].split("/repos/")[1]
+        if repo.split("/")[0].lower() in OWN:
             continue
-        try:
-            for lang, n in _req(r["languages_url"]).items():
-                langs[lang] = langs.get(lang, 0) + n
-        except Exception:
-            pass
+        if repo not in stars:
+            stars[repo] = _req(it["repository_url"])["stargazers_count"]
+        state = "merged" if (it.get("pull_request") or {}).get("merged_at") else it["state"]
+        upstream.append({"repo": repo, "stars": stars[repo], "number": it["number"],
+                         "title": it["title"], "state": state, "created_at": it["created_at"]})
 
     data = {"fetched_at": datetime.now(timezone.utc).isoformat(),
-            "calendar": cal, "events": events, "langs": langs}
+            "calendar": cal, "events": events, "upstream": upstream}
     with open(CACHE, "w") as f:
         json.dump(data, f)
     return data
@@ -109,15 +111,15 @@ for e in recent:
     repo_hits[name] = repo_hits.get(name, 0) + 1
 top_repos = [n for n, _ in sorted(repo_hits.items(), key=lambda kv: -kv[1])[:3]]
 
-# languages → short labels, top 3 + other
-SHORT = {"Python": "py", "TypeScript": "ts", "JavaScript": "js", "C++": "c++",
-         "HTML": "html", "CSS": "css", "Jupyter Notebook": "ipynb", "Shell": "sh"}
-total_bytes = sum(DATA["langs"].values()) or 1
-ranked = sorted(DATA["langs"].items(), key=lambda kv: -kv[1])
-LANGS = [(SHORT.get(k, k.lower()), round(100 * v / total_bytes)) for k, v in ranked[:3]]
-other = 100 - sum(p for _, p in LANGS)
-if other > 0:
-    LANGS.append(("other", other))
+# upstream PRs: closed-unmerged dropped, merged first, newest first
+STATE_RANK = {"merged": 0, "open": 1}
+UPSTREAM = sorted((u for u in DATA.get("upstream", []) if u["state"] in STATE_RANK),
+                  key=lambda u: u["created_at"], reverse=True)
+UPSTREAM.sort(key=lambda u: STATE_RANK[u["state"]])
+UPSTREAM = UPSTREAM[:6]
+
+# what I actually write now (repo byte counts are dominated by old hackathon HTML)
+STACK = ["python", "pytorch", "triton", "sglang", "typescript", "postgres"]
 
 # ------------------------------------------------------------------- render
 W = 830
@@ -182,7 +184,28 @@ emit(PAD, tspan("★ ", MID) + tspan("incoming @ Laurier × Waterloo", GREEN_HI,
 prompt("gh achievements --proud-of")
 gap(6)
 emit(PAD, tspan("★ ", MID) + tspan("4× hackathon winner", GREEN_HI, "bold") + tspan(" — slicefund · ferdinand · simteach · biobuddyai", GREEN))
-emit(PAD, tspan("★ ", MID) + tspan("contributor @ LMCache", GREEN_HI, "bold") + tspan(" · ", GREEN) + tspan("12 hackathons · 11 projects shipped", GREEN_HI, "bold"))
+emit(PAD, tspan("★ ", MID) + tspan("12 hackathons · 11 projects shipped", GREEN_HI, "bold"))
+
+# upstream contributions (live)
+if UPSTREAM:
+    prompt("gh contributions --upstream --recent")
+    gap(6)
+    TAG = {"merged": GREEN_HI, "open": MID}
+    for repo in dict.fromkeys(u["repo"] for u in UPSTREAM):
+        n = next(u["stars"] for u in UPSTREAM if u["repo"] == repo)
+        stars = f"{n/1000:.1f}k" if n >= 1000 else str(n)
+        emit(PAD, tspan("★ ", MID) + tspan(repo, GREEN_HI, "bold") + tspan(f"  {stars}★", DIM), dy=LINE - 3)
+        for u in (u for u in UPSTREAM if u["repo"] == repo):
+            title = re.sub(r"^(\[[^\]]*\])+\s*|^\w+(\([^)]*\))?:\s*", "", u["title"])
+            title = title if len(title) <= 66 else title[:65].rstrip() + "…"
+            body.append(
+                f'<text y="{cy}" font-size="{FS}">'
+                f'<tspan x="{PAD + 22}" fill="{DIM}">#{u["number"]}</tspan>'
+                f'<tspan x="{PAD + 90}" fill="{GREEN}">{esc(title)}</tspan>'
+                f'<tspan x="{W - PAD}" text-anchor="end" fill="{TAG[u["state"]]}" font-weight="bold">{u["state"]}</tspan>'
+                f'</text>')
+            cy += LINE - 3
+        gap(4)
 
 # repos
 prompt("gh repos --sort recent | head -6")
@@ -255,21 +278,10 @@ if prs:
 if extras:
     emit(PAD, tspan("★ ", MID) + tspan(" · ".join(extras), GREEN))
 
-# langs (real)
-prompt("gh langs")
-gap(8)
-bar_w, bar_h = 250, 12
-for i in range(0, len(LANGS), 2):
-    row = LANGS[i:i+2]
-    for j, (lang, pct) in enumerate(row):
-        lx = PAD + j * 380
-        body.append(f'<text x="{lx}" y="{cy}" font-size="{FS}" fill="{GREEN_HI}" font-weight="bold">{esc(lang)}</text>')
-        bx = lx + 62
-        by = cy - bar_h + 1
-        body.append(f'<rect x="{bx}" y="{by}" width="{bar_w}" height="{bar_h}" rx="2" fill="#14261a"/>')
-        body.append(f'<rect x="{bx}" y="{by}" width="{bar_w*pct/100:.0f}" height="{bar_h}" rx="2" fill="{GREEN}"/>')
-        body.append(f'<text x="{bx + bar_w + 12}" y="{cy}" font-size="{FS}" fill="{GREEN}">{pct}%</text>')
-    cy += LINE
+# stack
+prompt("gh stack --recent")
+gap(6)
+emit(PAD, tspan(" · ", DIM).join(tspan(t, GREEN_HI, "bold") for t in STACK))
 
 # footer
 gap(14)
